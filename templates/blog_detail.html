@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Blog App{% endblock title%}
+
+{% block content %}
+<div class="mx-auto" style="width: 300px;">
+    <h2 class="text-info"><ins>{{ blog.title }}</ins></h2>
+</div>
+<div class="d-flex bd-highlight">
+  <div class="p-2 flex-grow-1 bd-highlight"></div>
+  <div class ="p-2 bd-highlight font-italic">Author : {{ blog.author }}</div>
+</div>
+<ul class="nav justify-content-end">
+
+    <li class="nav-item">
+        <div class="dropdown" href="#" tabindex="-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Edit 
+            </button> 
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="{% url 'blog_update' blog.pk %}">Update</a>
+              <a class="dropdown-item" href="{% url 'blog_delete' blog.pk %}">Delete</a>
+            </div>
+          </div>
+    </li>
+</ul>
+<br>
+
+<div class="card border-secondary">
+  <div class="card-body">
+    {{ blog.body|linebreaks }}
+  </div>
+</div>
+{% endblock content %}
+

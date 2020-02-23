@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Blog App{% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+  
+  <div class="mx-auto" style="width: 200px;">
+    <h1>My BLogs</h1>
+  </div><br>
+
+{% for blog in object_list %}
+
+<div class = "blog entry card">  <!--see description below-->
+  <div class="card-body text-white bg-dark">
+<h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>
+<p>{{ blog.body|truncatewords:10 }}</p>
+</div>
+</div>
+
+
+
+
+{% endfor %}
+
+
+{% else %}
+  <div class="mx-auto" style="width: 300px;">
+  <h3>You are not logged in !</h3></div><br>
+  <div class="mx-auto" style="width: 150px;">
+  <a href="{% url 'login' %}">Log In</a> |
+  <a href="{% url 'signup' %}">Sign Up</a>
+  </div>
+{% endif %}
+
+{% endblock content %}
+
+
+<!-- NOTE: 
+-the object_list came from the class ListView.
+-blog entry will show your list items line by line instead of mentioning all the items in the same line.
+
+-->

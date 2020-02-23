@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Update Blog{% endblock title%}
+
+{% block content %}
+
+<form action = "" method = "post">
+    {% csrf_token %}
+    {{ form.as_p }} 
+    <input type = "submit" class = "btn btn-success ml-2" value = "Update"> 
+    <a class = "btn btn-primary" href = "{% url 'blog_detail' blog.pk %}" role = "button">Cancel</a>
+</form>
+
+
+{% endblock content %}
+
+
+<!--
+    {{ form.as_p }} is grabbing the content of the form and displaying the model fields in paragraph manner. 
+    If we do not use {{ form.as_p }} we will see only two buttons, which are Update and Cancel.
+    
+-->
