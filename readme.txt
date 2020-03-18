@@ -4,7 +4,7 @@ CRUD functionality
 -Create blog
 -Read blog
 -Update blog
--Delte blog
+-Delete blog
 
 Other Features
 -Login and logout functionality
