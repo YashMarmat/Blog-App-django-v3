@@ -1,13 +1,13 @@
-A beautifully designed blog app with crud functinality
+A beautifully designed blog app with CRUD functionality
 
 CRUD functionality
--create blog
--read blog
--update blog
--delte blog
+-Create blog
+-Read blog
+-Update blog
+-Delte blog
 
 Other Features
--login and logout functionality
--user authentication control
--password protection 
--password reset functionality 
+-Login and logout functionality
+-User authentication control
+-Password protection 
+-Password reset functionality 
