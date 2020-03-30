@@ -5,8 +5,8 @@ from django.contrib.auth import get_user_model
 
 class SignUpPageTest(TestCase):
 
-    username = 'newuser'
-    email = 'newuser@gmail.com'
+    username = 'randomuser'
+    email = 'randomuser@gmail.com'
 
     def test_signup_page_status_code(self):
         response = self.client.get('/accounts/')
