@@ -55,7 +55,14 @@ class BlogTest(TestCase):
         self.assertContains(request, 'A good title')
         self.assertContains(request, 'any description')   
         self.assertTemplateUsed(request, 'blog_detail.html')
+    
+    def test_detail_page_for_logged_out_user(self):
+        self.client.logout()
+        request = self.client.get(reverse('blog_detail', args = '1'))
+        self.assertEqual(request.status_code, 302) # send loggout user to different page
+        self.assertRedirects(request, '/accounts/login/?next=/1') # redirects the user to login page   
 
+        
     def test_blog_create_for_logged_in_user(self):
         self.client.login(username = 'testuser', email='test@gmail.com', password='secret')
         request = self.client.post(reverse('blog_new'), {
