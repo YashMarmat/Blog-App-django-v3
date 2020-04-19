@@ -1,4 +1,4 @@
-A beautifully designed blog app with CRUD functionality (tested with TestCase).
+A beautifully designed blog app with CRUD functionality (with Unitests).
 
 CRUD functionality
 -Create blog
