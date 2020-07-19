@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+
+<h3>Log In</h3>
+
+<form method = "post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = "submit" class = 'btn btn-success'>Log In</button>
+    <a class = "btn btn-primary" href = "{% url 'signup' %}" role = "button">Sign Up</a>
+</form>
+
+
+{% endblock content %}
+
+<!-- for logins we need to use a predefined django module which is (django.contrib.auth.urls) and
+we need to mention it inside the project level urls.py file not inside app's urls.py file. -->
