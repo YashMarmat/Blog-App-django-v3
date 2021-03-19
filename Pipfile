@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 pylint = "*"
-django = "==3.0"
+django = "==3.1.6"
 
 [requires]
 python_version = "3.8"
